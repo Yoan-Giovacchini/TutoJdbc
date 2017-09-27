@@ -5,13 +5,13 @@ import java.sql.*;
 
 public class TestJDBC {
 	// Chaine de connexion
-	static final String CONNECT_URL = "jdbc:mysql://localhost:3306/gestionPedaBD";
-	static final String LOGIN = "monUser";
-	static final String PASSWORD = "monPassword";
+	static final String CONNECT_URL = "jdbc:mysql://mysql-yoangiovacchini.alwaysdata.net:3306/yoangiovacchini_bd";
+	static final String LOGIN = "144527_yg";
+	static final String PASSWORD = "1234";
 	// La requete de test
 	static final String req = "SELECT NUM_ET, NOM_ET, PRENOM_ET " +
-	                          "FROM ETUDIANT " +
-	                          "WHERE VILLE_ET = 'AIX-EN-PROVENCE'";
+			"FROM ETUDIANT " +
+			"WHERE VILLE_ET = 'AIX-EN-PROVENCE'";
 
 	public static void main(String[] args) throws SQLException {
 		// Connexion a la base
@@ -24,7 +24,7 @@ public class TestJDBC {
 			System.out.println("Execution de la requete : " + req );
 			ResultSet rset = stmt.executeQuery(req);
 			// Affichage du resultat
-			while (rset.next()){	
+			while (rset.next()){
 				System.out.print(rset.getInt("NUM_ET") + " ");
 				System.out.print(rset.getString("NOM_ET") + " ");
 				System.out.println(rset.getString("PRENOM_ET"));
